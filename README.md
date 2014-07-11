@@ -11,7 +11,8 @@ This can be used as your hibernate id creation strategy, if you wish to use sequ
 Usage
 -----
  Annote your primary key entity field with
+  
   @Id
-	@GenericGenerator(name="seq_id", strategy="org.java.hibernate.support.SequenceIdGenerator")
-	@GeneratedValue(generator="seq_id")
+  @GenericGenerator(name="seq_id", strategy="org.java.hibernate.support.SequenceIdGenerator")
+  @GeneratedValue(generator="seq_id")
 	
