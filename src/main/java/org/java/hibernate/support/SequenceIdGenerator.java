@@ -25,7 +25,7 @@ public class SequenceIdGenerator implements IdentifierGenerator {
 		try {
 			try {
 				return getNextSequence(session, sequenceName);
-			} catch (final Exception e) {
+			} catch (final SQLException e) {
 				return createAndGetNextSequence(session, sequenceName);
 			}
 
