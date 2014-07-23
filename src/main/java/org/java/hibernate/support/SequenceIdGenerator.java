@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 
 import javax.persistence.Table;
 
@@ -23,9 +24,11 @@ public class SequenceIdGenerator implements IdentifierGenerator {
 			sequenceName += object.getClass().getSimpleName().toLowerCase();
 		}
 		try {
+			final Savepoint savepoint =  session.connection().setSavepoint();
 			try {
 				return getNextSequence(session, sequenceName);
 			} catch (final SQLException e) {
+				session.connection().rollback(savepoint);
 				return createAndGetNextSequence(session, sequenceName);
 			}
 
