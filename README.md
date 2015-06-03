@@ -8,6 +8,8 @@ Collection of API's to support in hibernate development
 
 This can be used as your hibernate id creation strategy, if you wish to use sequence per table. This will automatically generate db sequence for every entity and will take care of supplying new id. The generated seqence will be either picked from Entity's `@Table` annotation's name value or Entity class name  and affix with `seq_` 
 
+__NOTE__ : Now this won't support when using JOIN table Inheritence strategy
+
 eg:
 
 	@Table(name="my_table")
