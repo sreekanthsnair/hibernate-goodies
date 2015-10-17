@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.java</groupId>
   <artifactId>hibernate-goodies</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>hibernate-goodies</name>
   <description>Collection API to support in hibernate development</description>
   <inceptionYear>2015</inceptionYear>
