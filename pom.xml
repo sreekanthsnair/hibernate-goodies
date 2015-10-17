@@ -2,9 +2,60 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.java</groupId>
   <artifactId>hibernate-goodies</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <name>hibernate-goodies</name>
   <description>Collection API to support in hibernate development</description>
+  <inceptionYear>2015</inceptionYear>
+  <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/sreekanthsnair/hibernate-goodies/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/sreekanthsnair/hibernate-goodies.git</connection>
+        <developerConnection>scm:git:git@github.com:sreekanthsnair/hibernate-goodies.git</developerConnection>
+        <url>https://github.com/sreekanthsnair/hibernate-goodies</url>
+      <tag>1.0.0</tag>
+  </scm>
+
+    <organization>
+        <name>Opensource</name>
+        <url>https://github.com</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <comments>See also: https://raw.githubusercontent.com/sreekanthsnair/hibernate-goodies/master/LICENSE</comments>
+        </license>
+    </licenses>
+
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://ci.egovernments.org/job/Test/</url>
+    </ciManagement>
+<developers>
+        <developer>
+            <id>sreekanthsnair</id>
+            <name>Sreekanth S Nair</name>
+            <email>sreekanthsnair@hotmail.co.uk</email>
+            <url>https://github.com/sreekanthsnair</url>
+        </developer>
+</developers>
+<distributionManagement>
+        <repository>
+            <id>releases-repository</id>
+            <name>Hibernate Goodies Releases Repository</name>
+            <url>http://repo.egovernments.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots-repository</id>
+            <name>Hibernate Goodies Snapshots Repository</name>
+            <url>http://repo.egovernments.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
   <dependencies>
   	<dependency>
   		<groupId>javax.persistence</groupId>
@@ -17,4 +68,22 @@
   		<version>4.3.5.Final</version>
   	</dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <goals>deploy</goals>
+                    <arguments>-DskipTests</arguments>
+                    <pushChanges>true</pushChanges>
+                    <localCheckout>true</localCheckout>
+                    <preparationGoals>clean install</preparationGoals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+    </plugins>    
+  </build>
 </project>
