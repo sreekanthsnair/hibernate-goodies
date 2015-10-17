@@ -83,7 +83,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     <tagNameFormat>@{project.version}</tagNameFormat>
-                    <scmCommentPrefix>#42Released${line.separator}Version${line.separator}@{project.version}${line.separator}</scmCommentPrefix>
+                    <scmCommentPrefix>#42Released${line.separator}Version${line.separator}${project.version}${line.separator}</scmCommentPrefix>
                 </configuration>
             </plugin>
     </plugins>    
