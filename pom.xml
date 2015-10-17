@@ -15,7 +15,6 @@
         <connection>scm:git:git://github.com/sreekanthsnair/hibernate-goodies.git</connection>
         <developerConnection>scm:git:git@github.com:sreekanthsnair/hibernate-goodies.git</developerConnection>
         <url>https://github.com/sreekanthsnair/hibernate-goodies</url>
-    <tag>1.0.0</tag>
   </scm>
 
     <organization>
