@@ -11,7 +11,7 @@
     </mirrors>
 	<servers>
         <server>
-            <id>repo.egovernments.org</id>
+            <id>releases-repository</id>
             <username>${nexus.user}</username>
             <password>${nexus.password}</password>
         </server>
