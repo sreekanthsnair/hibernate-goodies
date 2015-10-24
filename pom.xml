@@ -55,7 +55,9 @@
             <url>http://repo.egovernments.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-    
+   <properties>
+		<build.number>Local</build.number>
+	</properties> 
   <dependencies>
   	<dependency>
   		<groupId>javax.persistence</groupId>
@@ -70,6 +72,24 @@
   </dependencies>
   <build>
     <plugins>
+      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Specification-Title>${project.name}</Specification-Title>
+							<Specification-Version>${project.version}</Specification-Version>
+							<Implementation-Version>${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
